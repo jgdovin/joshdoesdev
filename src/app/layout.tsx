@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { ThemeProvider } from "@/contexts/ThemeProvider";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Josh Does Dev",
@@ -17,6 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider>
+        <Header />
+
         {children}
       </ThemeProvider>
     </html>

@@ -1,6 +1,6 @@
 "use client";
-import { createContext, useContext, useState } from 'react';
-import useLocalStorage from "react-use-localstorage";
+
+import { createContext, useContext, useEffect, useState } from 'react';
 
 export const themeNames = [
   "light",
@@ -18,24 +18,25 @@ const Theme = createContext({} as ThemeStateTypes);
 
 export const useThemeContext = () => useContext(Theme);
 
-const getInitialTheme = (prefersDark: boolean) => {
-  
-}
-
 export const ThemeProvider = ({ children } : { children: React.ReactNode }) => {
-  const systemDarkMode = window?.matchMedia('(prefers-color-scheme: dark)').matches;
-  const [storedTheme, setStoredTheme] = useLocalStorage("theme", systemDarkMode ? 'dark' : 'light');
-  const [activeTheme, setActiveTheme] = useState<ThemeNames>(storedTheme as ThemeNames);
-  
+  const [activeTheme, setActiveTheme] = useState<ThemeNames>("dark" as ThemeNames);
+
+  useEffect(() => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const storedTheme = localStorage.getItem("theme");
+    const initialTheme = storedTheme ? storedTheme as ThemeNames : prefersDark ? "dark" : "light";
+    setActiveTheme(initialTheme);
+  }, [])
+
   const toggleActiveTheme = () => {
     const newTheme = activeTheme === themeNames[0] ? themeNames[1] : themeNames[0];
     setActiveTheme(newTheme);
-    setStoredTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
   }
 
   return (
       <Theme.Provider value={{theme: activeTheme, toggleTheme: toggleActiveTheme}}>
-        <body className={activeTheme}>
+        <body className={`${activeTheme} mx-auto max-w-2xl px-5 py-12`}>
           {children}
         </body>
       </Theme.Provider>
