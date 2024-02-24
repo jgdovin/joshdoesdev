@@ -23,7 +23,7 @@ const getInitialTheme = (prefersDark: boolean) => {
 }
 
 export const ThemeProvider = ({ children } : { children: React.ReactNode }) => {
-  const systemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const systemDarkMode = window?.matchMedia('(prefers-color-scheme: dark)').matches;
   const [storedTheme, setStoredTheme] = useLocalStorage("theme", systemDarkMode ? 'dark' : 'light');
   const [activeTheme, setActiveTheme] = useState<ThemeNames>(storedTheme as ThemeNames);
   
