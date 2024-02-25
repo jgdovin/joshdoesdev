@@ -12,7 +12,7 @@ const ArticlePreview = (articlePreview: ArticlePreviewType) => {
   return (
     <article className="scale-100 hover:scale-105 transition-all">
       <Link href="/">
-        <h2>{title}</h2>
+        <h2 className="bg-gradient-to-r from-accent to-destructive dark:to-muted text-transparent bg-clip-text">{title}</h2>
         <p className="text-[13px]">{date}</p>
         <p className="mt-2">{description}</p>
       </Link>
