@@ -54,7 +54,7 @@
     --muted: #239589;
     --muted-foreground: #011627;
 
-    --accent: #49D4C6;
+    --accent: #49d4c6;
     --accent-foreground: #011627;
 
     --destructive: #e71d36;
@@ -64,6 +64,10 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
+}
+
+h1 {
+  @apply text-4xl font-bold;
 }
 
 h2 {

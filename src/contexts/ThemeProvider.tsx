@@ -1,11 +1,8 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from "react";
 
-export const themeNames = [
-  "light",
-  "dark"
-] as const;
+export const themeNames = ["light", "dark"] as const;
 
 export type ThemeNames = (typeof themeNames)[number];
 
@@ -18,27 +15,36 @@ const Theme = createContext({} as ThemeStateTypes);
 
 export const useThemeContext = () => useContext(Theme);
 
-export const ThemeProvider = ({ children } : { children: React.ReactNode }) => {
-  const [activeTheme, setActiveTheme] = useState<ThemeNames>("dark" as ThemeNames);
+export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  const [activeTheme, setActiveTheme] = useState<ThemeNames>(
+    "dark" as ThemeNames,
+  );
 
   useEffect(() => {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     const storedTheme = localStorage.getItem("theme");
-    const initialTheme = storedTheme ? storedTheme as ThemeNames : prefersDark ? "dark" : "light";
+    const initialTheme = storedTheme
+      ? (storedTheme as ThemeNames)
+      : prefersDark
+        ? "dark"
+        : "light";
     setActiveTheme(initialTheme);
-  }, [])
+  }, []);
 
   const toggleActiveTheme = () => {
-    const newTheme = activeTheme === themeNames[0] ? themeNames[1] : themeNames[0];
+    const newTheme =
+      activeTheme === themeNames[0] ? themeNames[1] : themeNames[0];
     setActiveTheme(newTheme);
     localStorage.setItem("theme", newTheme);
-  }
+  };
 
   return (
-      <Theme.Provider value={{theme: activeTheme, toggleTheme: toggleActiveTheme}}>
-        <body className={`${activeTheme} mx-auto max-w-2xl px-5 py-12`}>
-          {children}
-        </body>
-      </Theme.Provider>
-    )
-}
+    <Theme.Provider
+      value={{ theme: activeTheme, toggleTheme: toggleActiveTheme }}
+    >
+      <div className={`theme-${activeTheme}`}>{children}</div>
+    </Theme.Provider>
+  );
+};

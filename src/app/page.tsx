@@ -1,11 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
+import { getAllPosts } from "@/lib/posts";
+import PostList from "@/components/post-list";
 
 export default function Home() {
+  const posts = getAllPosts();
   return (
     <main className="flex flex-col items-center justify-between p-24">
-      <Link href="/alpha">To Alpha Page</Link>
-      <Image src="/under_construction.webp" width={800} height={800} alt="Under Construction!" />
+      <PostList posts={posts} />
     </main>
   );
 }

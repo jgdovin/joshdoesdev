@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { ThemeProvider } from "@/contexts/ThemeProvider";
-import Header from "@/components/Header";
+import { ThemeProvider } from "next-themes";
+import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Josh Does Dev",
@@ -14,14 +14,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
-    <html lang="en">
-      <ThemeProvider>
-        <Header />
-
-        {children}
-      </ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className="mx-auto max-w-4xl px-5 py-12">
+        <ThemeProvider enableSystem attribute="class">
+          <Header />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
