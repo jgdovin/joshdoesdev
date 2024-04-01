@@ -3,13 +3,17 @@ import React from "react";
 import PostPreview, { PostPreviewType } from "./post-preview";
 import { Post } from "@/interfaces/post";
 
+import markdownStyles from "./markdown-styles.module.css";
+
 export type PostListType = {
   posts: Post[];
 };
 
 const PostList = ({ posts }: PostListType) => {
   return (
-    <div className="relative flex flex-col gap-6 w-full">
+    <div
+      className={`${markdownStyles["markdown"]} relative flex w-full flex-col gap-6`}
+    >
       {posts?.map((post) => (
         <PostPreview
           key={post.title}

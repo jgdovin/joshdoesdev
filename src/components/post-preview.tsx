@@ -11,9 +11,9 @@ export type PostPreviewType = {
 const PostPreview = (postPreview: PostPreviewType) => {
   const { title, date, description, slug } = postPreview;
   return (
-    <article className="scale-100 hover:scale-105 transition-all">
+    <article className="markdown scale-100 transition-all hover:scale-105">
       <Link href={`/posts/${slug}`}>
-        <h2 className="bg-gradient-to-r from-accent to-destructive dark:to-muted text-transparent bg-clip-text">
+        <h2 className="bg-gradient-to-r from-accent to-destructive bg-clip-text text-transparent dark:to-muted">
           {title}
         </h2>
         <p className="text-[13px]">{date}</p>
