@@ -16,7 +16,7 @@
 }
 
 .markdown h2 {
-  @apply mb-4 mt-12 text-xl leading-snug;
+  @apply mt-12 text-xl leading-snug;
   @apply md:text-3xl;
   @apply lg:text-4xl;
 }

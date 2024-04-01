@@ -11,13 +11,13 @@ export type PostPreviewType = {
 const PostPreview = (postPreview: PostPreviewType) => {
   const { title, date, description, slug } = postPreview;
   return (
-    <article className="markdown scale-100 transition-all hover:scale-105">
+    <article className="scale-100 transition-all hover:scale-105">
       <Link href={`/posts/${slug}`}>
-        <h2 className="bg-gradient-to-r from-accent to-destructive bg-clip-text text-transparent dark:to-muted">
+        <h2 className="bg-gradient-to-r from-accent to-destructive bg-clip-text text-lg text-transparent dark:to-muted md:text-2xl lg:text-3xl">
           {title}
         </h2>
-        <p className="text-[13px]">{date}</p>
-        <p className="mt-2">{description}</p>
+        <span className="mt-[-10px] pl-2 text-xs text-gray-300">{date}</span>
+        <p className="mt-2 text-xs md:text-base">{description}</p>
       </Link>
     </article>
   );

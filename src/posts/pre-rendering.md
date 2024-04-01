@@ -1,6 +1,7 @@
 ---
 title: "Two Forms of Pre-rendering"
 date: "2024-03-03"
+excerpt: "this is just a test, these articles will be replaced later"
 ---
 
 # Creating a Button Component in React
