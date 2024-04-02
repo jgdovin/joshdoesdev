@@ -24,7 +24,7 @@ In your React project, create a new file called `Button.js` in the `src` directo
 
 Open the `Button.js` file and add the following React code:
 
-```jsx
+```javascript
 import React from "react";
 
 const Button = ({ text, onClick, type = "button", className }) => {
@@ -34,9 +34,9 @@ const Button = ({ text, onClick, type = "button", className }) => {
     </button>
   );
 };
-```
 
 export default Button;
+```
 
 This code snippet creates a functional component named `Button` that takes in props for text, onClick event, button type, and className. The button type defaults to 'button' if not provided. The className allows for additional styling to be applied from the parent component.
 
@@ -49,10 +49,12 @@ For a simple styling of the button, create a CSS file named `Button.css` and imp
 .btn {
   padding: 10px 20px;
   border: none;
+```
 
 Continue with your preferred styling. Remember to import the CSS file into your `Button.js` file:
 
-import './Button.css';
+```jsx
+import "./Button.css";
 ```
 
 ## Conclusion

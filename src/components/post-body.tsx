@@ -1,4 +1,5 @@
 import markdownStyles from "./markdown-styles.module.css";
+import "highlight.js/styles/atom-one-dark.css";
 
 type Props = {
   content: string;
@@ -6,7 +7,7 @@ type Props = {
 
 export function PostBody({ content }: Props) {
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="mx-auto max-w-2xl">
       <div
         className={markdownStyles["markdown"]}
         dangerouslySetInnerHTML={{ __html: content }}
