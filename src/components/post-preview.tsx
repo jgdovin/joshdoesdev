@@ -26,14 +26,16 @@ const PostPreview = (postPreview: PostPreviewType) => {
         className="transition-shadow hover:cursor-pointer hover:shadow-lg"
       >
         <CardHeader>
-          <CardTitle className={ibmPlexBold.className}>{title}</CardTitle>
+          <CardTitle className={`${ibmPlexBold.className} text-purple-400`}>
+            {title}
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <p>{description}</p>
         </CardContent>
         <CardFooter className="flex items-center justify-between">
           <Badge variant="secondary">Devops</Badge>
-          <span className="text-sm text-gray-500">{date}</span>
+          <span className="text-sm text-slate-400">{date}</span>
         </CardFooter>
       </Card>
     </Link>

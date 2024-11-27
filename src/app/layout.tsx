@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 ${raleway.className}`}
       >
-        <ThemeProvider enableSystem attribute="class">
+        <ThemeProvider enableSystem attribute="class" forcedTheme="dark">
           <div className="flex min-h-screen flex-col">
             <Analytics />
             <Header />

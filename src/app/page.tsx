@@ -21,7 +21,7 @@ export default function Home() {
               <li>
                 <Link
                   href="/category/cicd"
-                  className="text-blue-600 hover:underline"
+                  className="text-purple-400 hover:underline"
                 >
                   CI/CD
                 </Link>
@@ -29,7 +29,7 @@ export default function Home() {
               <li>
                 <Link
                   href="/category/containerization"
-                  className="text-blue-600 hover:underline"
+                  className="text-purple-400 hover:underline"
                 >
                   Containerization
                 </Link>
@@ -37,7 +37,7 @@ export default function Home() {
               <li>
                 <Link
                   href="/category/iac"
-                  className="text-blue-600 hover:underline"
+                  className="text-purple-400 hover:underline"
                 >
                   Infrastructure as Code
                 </Link>
@@ -45,7 +45,7 @@ export default function Home() {
               <li>
                 <Link
                   href="/category/monitoring"
-                  className="text-blue-600 hover:underline"
+                  className="text-purple-400 hover:underline"
                 >
                   Monitoring
                 </Link>
@@ -53,7 +53,7 @@ export default function Home() {
               <li>
                 <Link
                   href="/category/security"
-                  className="text-blue-600 hover:underline"
+                  className="text-purple-400 hover:underline"
                 >
                   Security
                 </Link>
