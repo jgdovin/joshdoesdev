@@ -4,8 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
 import { Analytics } from "@vercel/analytics/react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/custom/Header";
+import Footer from "@/components/custom/Footer";
 import { raleway } from "@/lib/fonts";
 
 export const metadata: Metadata = {
