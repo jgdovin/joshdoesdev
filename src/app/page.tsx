@@ -63,14 +63,23 @@ export default function Home() {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>About DevOps Diaries</CardTitle>
+            <CardTitle>About Me</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="flex flex-col gap-6">
             <p>
-              Exploring the cutting-edge of modern engineering and DevOps
-              practices. Join us on a journey through the latest tools,
-              techniques, and best practices in the world of software
-              development and operations.
+              Hi, I'm Josh Gdovin—a seasoned DevOps professional with a passion
+              for implementing best practices and enhancing the developer
+              experience.
+            </p>
+            <p>
+              With a background in cloud architecture and infrastructure
+              automation, I strive to build scalable and efficient systems.
+            </p>
+            <p>
+              Outside of work, I'm an avid hiker, snowboarder, and disc golf
+              enthusiast. I also have a deep love for animals, especially
+              ferrets and cats. Welcome to my blog, where I share insights on
+              Technology, Devops, Engineering and more!
             </p>
           </CardContent>
         </Card>
