@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { ThemeProvider } from "next-themes";
-import Header from "@/components/header";
 
 import { Analytics } from "@vercel/analytics/react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { raleway } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Josh Does Dev",
@@ -13,16 +15,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="mx-auto max-w-lg px-5 py-12 md:max-w-2xl lg:max-w-5xl">
-        <Analytics />
+    <html lang="en">
+      <body
+        className={`bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 ${raleway.className}`}
+      >
         <ThemeProvider enableSystem attribute="class">
-          <Header />
-          {children}
+          <div className="flex min-h-screen flex-col">
+            <Analytics />
+            <Header />
+            <main className="container mx-auto flex-grow px-4 py-8">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
