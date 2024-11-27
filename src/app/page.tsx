@@ -1,10 +1,10 @@
-import { getAllPosts } from "@/lib/posts";
+import { getAllPublishedPosts } from "@/lib/posts";
 import PostList from "@/components/post-list";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 
 export default function Home() {
-  const posts = getAllPosts();
+  const posts = getAllPublishedPosts();
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
       <div className="space-y-8 md:col-span-2">

@@ -19,20 +19,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={`bg-gray-50 text-gray-900 dark:bg-gray-800 dark:text-gray-100 ${raleway.className}`}
       >
-        <ThemeProvider enableSystem attribute="class" forcedTheme="dark">
-          <div className="flex min-h-screen flex-col">
-            <Analytics />
-            <Header />
-            <main className="container mx-auto flex-grow px-4 py-8">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+        <div className="flex min-h-screen flex-col">
+          <Analytics />
+          <Header />
+          <main className="container mx-auto flex-grow px-4 py-8">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

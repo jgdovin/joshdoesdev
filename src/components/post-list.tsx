@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import PostPreview, { PostPreviewType } from "./post-preview";
+import PostPreview from "./post-preview";
 import { Post } from "@/interfaces/post";
 
 export type PostListType = {
@@ -10,15 +10,7 @@ export type PostListType = {
 const PostList = ({ posts }: PostListType) => {
   return (
     <div className={` relative flex w-full flex-col gap-6`}>
-      {posts?.map((post) => (
-        <PostPreview
-          key={post.title}
-          title={post.title}
-          date={post.date}
-          description={post.excerpt}
-          slug={post.slug}
-        />
-      ))}
+      {posts?.map((post) => <PostPreview key={post.slug} post={post} />)}
     </div>
   );
 };

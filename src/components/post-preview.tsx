@@ -9,16 +9,12 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import Link from "next/link";
+import { Post } from "@/interfaces/post";
+import { capitalizeFirstLetter } from "@/lib/utils";
 
-export type PostPreviewType = {
-  title: string;
-  date: string;
-  description: string;
-  slug: string;
-};
-
-const PostPreview = (postPreview: PostPreviewType) => {
-  const { title, date, description, slug } = postPreview;
+const PostPreview = ({ post }: { post: Post }) => {
+  const { title, date, excerpt, slug, tags } = post;
+  const mainTag = capitalizeFirstLetter(tags.split(",")[0]);
   return (
     <Link href={`/posts/${slug}`}>
       <Card
@@ -31,10 +27,10 @@ const PostPreview = (postPreview: PostPreviewType) => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p>{description}</p>
+          <p>{excerpt}</p>
         </CardContent>
         <CardFooter className="flex items-center justify-between">
-          <Badge variant="secondary">Devops</Badge>
+          <Badge variant="secondary">{mainTag}</Badge>
           <span className="text-sm text-slate-400">{date}</span>
         </CardFooter>
       </Card>

@@ -35,6 +35,9 @@ importers:
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
+      highlight.js:
+        specifier: ^11.10.0
+        version: 11.10.0
       hljs:
         specifier: ^6.2.3
         version: 6.2.3

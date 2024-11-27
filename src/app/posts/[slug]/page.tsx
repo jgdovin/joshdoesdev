@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { getAllPublishedPosts, getPostBySlug } from "@/lib/posts";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 // import Alert from "@/app/_components/alert";
@@ -9,6 +9,7 @@ import { Calendar, User } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { Separator } from "@/components/ui/separator";
 import markdownStyles from "@/components/markdown-styles.module.css";
+import { PostBody } from "@/components/post-body";
 
 export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug);
@@ -20,7 +21,7 @@ export default async function Post({ params }: Params) {
   const content = await markdownToHtml(post.content || "");
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <main className="mx-auto max-w-4xl">
       <article className="overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800">
         <div className="p-8">
           <Badge className="mb-4">Devops</Badge>
@@ -32,12 +33,7 @@ export default async function Post({ params }: Params) {
             <span className="mr-4">{post.date}</span>
           </div>
           <Separator className="my-6" />
-          <div className="prose dark:prose-invert max-w-none">
-            <div
-              className={markdownStyles["markdown"]}
-              dangerouslySetInnerHTML={{ __html: content }}
-            />
-          </div>
+          <PostBody content={content} />
         </div>
       </article>
 
@@ -56,7 +52,7 @@ export default async function Post({ params }: Params) {
           <Button className="rounded-l-none">Subscribe</Button>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
 
@@ -84,7 +80,7 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = getAllPublishedPosts();
 
   return posts.map((post) => ({
     slug: post.slug,

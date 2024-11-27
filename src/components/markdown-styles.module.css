@@ -26,3 +26,8 @@
   @apply md:text-2xl;
   @apply lg:text-3xl;
 }
+
+.markdown pre {
+  @apply bg-gray-800;
+  @apply px-1 py-0.5;
+}
