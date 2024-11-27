@@ -36,22 +36,6 @@ export default async function Post({ params }: Params) {
           <PostBody content={content} />
         </div>
       </article>
-
-      <section className="mt-12 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white">
-        <h2 className="mb-4 text-2xl font-bold">Stay Updated</h2>
-        <p className="mb-4">
-          Subscribe to our newsletter for the latest DevOps insights and best
-          practices.
-        </p>
-        <div className="flex">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-grow rounded-l-lg p-2 text-gray-900"
-          />
-          <Button className="rounded-l-none">Subscribe</Button>
-        </div>
-      </section>
     </main>
   );
 }
