@@ -32,7 +32,7 @@ const generateRandomProperties = (index: number) => {
     animationDuration: duration,
     animationDelay: delay,
     transformOrigin,
-    boxShadow,
+
     color,
   };
 };
@@ -59,9 +59,10 @@ const Background = () => {
             animationDuration: spanProps.animationDuration,
             animationDelay: spanProps.animationDelay,
             transformOrigin: spanProps.transformOrigin,
-            boxShadow: spanProps.boxShadow,
+
             color: spanProps.color,
           }}
+          className="space-invader"
         ></span>
       ))}
     </div>

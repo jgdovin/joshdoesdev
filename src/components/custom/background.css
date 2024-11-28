@@ -16,9 +16,9 @@
 }
 
 .background span {
-  width: 5vmin;
+  /* width: 15vmin;
   height: 5vmin;
-  border-radius: 5vmin;
+  border-radius: 5vmin 5vmax 5vmax 5vmin; */
   backface-visibility: hidden;
   position: absolute;
   animation-name: move;
@@ -51,4 +51,80 @@
 
   /* Hide the corners of the header */
   overflow: hidden;
+}
+
+.space-invader:nth-child(odd) {
+  box-shadow: 0 0 0 1em #2563eb,
+  0 1em 0 1em #2563eb,
+  -2.5em 1.5em 0 .5em #2563eb,
+  2.5em 1.5em 0 .5em #2563eb,
+  -3em -3em 0 0 #2563eb,
+  3em -3em 0 0 #2563eb,
+  -2em -2em 0 0 #2563eb,
+  2em -2em 0 0 #2563eb,
+  -3em -1em 0 0 #2563eb,
+  -2em -1em 0 0 #2563eb,
+  2em -1em 0 0 #2563eb,
+  3em -1em 0 0 #2563eb,
+  -4em 0 0 0 #2563eb,
+  -3em 0 0 0 #2563eb,
+  3em 0 0 0 #2563eb,
+  4em 0 0 0 #2563eb,
+  -5em 1em 0 0 #2563eb,
+  -4em 1em 0 0 #2563eb,
+  4em 1em 0 0 #2563eb,
+  5em 1em 0 0 #2563eb,
+  -5em 2em 0 0 #2563eb,
+  5em 2em 0 0 #2563eb,
+  -5em 3em 0 0 #2563eb,
+  -3em 3em 0 0 #2563eb,
+  3em 3em 0 0 #2563eb,
+  5em 3em 0 0 #2563eb,
+  -2em 4em 0 0 #2563eb,
+  -1em 4em 0 0 #2563eb,
+  1em 4em 0 0 #2563eb,
+  2em 4em 0 0 #2563eb;
+  background: #2563eb;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  margin: 50px 0 70px 65px;
+}
+
+.space-invader:nth-child(even) {
+  box-shadow: 0 0 0 1em #9333ea,
+  0 1em 0 1em #9333ea,
+  -2.5em 1.5em 0 .5em #9333ea,
+  2.5em 1.5em 0 .5em #9333ea,
+  -3em -3em 0 0 #9333ea,
+  3em -3em 0 0 #9333ea,
+  -2em -2em 0 0 #9333ea,
+  2em -2em 0 0 #9333ea,
+  -3em -1em 0 0 #9333ea,
+  -2em -1em 0 0 #9333ea,
+  2em -1em 0 0 #9333ea,
+  3em -1em 0 0 #9333ea,
+  -4em 0 0 0 #9333ea,
+  -3em 0 0 0 #9333ea,
+  3em 0 0 0 #9333ea,
+  4em 0 0 0 #9333ea,
+  -5em 1em 0 0 #9333ea,
+  -4em 1em 0 0 #9333ea,
+  4em 1em 0 0 #9333ea,
+  5em 1em 0 0 #9333ea,
+  -5em 2em 0 0 #9333ea,
+  5em 2em 0 0 #9333ea,
+  -5em 3em 0 0 #9333ea,
+  -3em 3em 0 0 #9333ea,
+  3em 3em 0 0 #9333ea,
+  5em 3em 0 0 #9333ea,
+  -2em 4em 0 0 #9333ea,
+  -1em 4em 0 0 #9333ea,
+  1em 4em 0 0 #9333ea,
+  2em 4em 0 0 #9333ea;
+  background: #9333ea;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  margin: 50px 0 70px 65px;
 }
