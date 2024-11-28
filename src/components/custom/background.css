@@ -50,89 +50,165 @@
   /* Hide the corners of the header */
   overflow: hidden;
 }
-@media (max-width: 640px) {
-  .space-invader {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    box-shadow: 5px 5px 0 0 currentColor;
-  }
 
-}
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .space-invader:nth-child(odd) {
-    box-shadow: 0 0 0 1em #2563eb,
-    0 1em 0 1em #2563eb,
-    -2.5em 1.5em 0 .5em #2563eb,
-    2.5em 1.5em 0 .5em #2563eb,
-    -3em -3em 0 0 #2563eb,
-    3em -3em 0 0 #2563eb,
-    -2em -2em 0 0 #2563eb,
-    2em -2em 0 0 #2563eb,
-    -3em -1em 0 0 #2563eb,
-    -2em -1em 0 0 #2563eb,
-    2em -1em 0 0 #2563eb,
-    3em -1em 0 0 #2563eb,
-    -4em 0 0 0 #2563eb,
-    -3em 0 0 0 #2563eb,
-    3em 0 0 0 #2563eb,
-    4em 0 0 0 #2563eb,
-    -5em 1em 0 0 #2563eb,
-    -4em 1em 0 0 #2563eb,
-    4em 1em 0 0 #2563eb,
-    5em 1em 0 0 #2563eb,
-    -5em 2em 0 0 #2563eb,
-    5em 2em 0 0 #2563eb,
-    -5em 3em 0 0 #2563eb,
-    -3em 3em 0 0 #2563eb,
-    3em 3em 0 0 #2563eb,
-    5em 3em 0 0 #2563eb,
-    -2em 4em 0 0 #2563eb,
-    -1em 4em 0 0 #2563eb,
-    1em 4em 0 0 #2563eb,
-    2em 4em 0 0 #2563eb;
+    box-shadow:
+      0 0 0 0.5em #2563eb,
+      0 0.5em 0 0.5em #2563eb,
+      -1.25em 0.75em 0 0.25em #2563eb,
+      1.25em 0.75em 0 0.25em #2563eb,
+      -1.5em -1.5em 0 0 #2563eb,
+      1.5em -1.5em 0 0 #2563eb,
+      -1em -1em 0 0 #2563eb,
+      1em -1em 0 0 #2563eb,
+      -1.5em -0.5em 0 0 #2563eb,
+      -1em -0.5em 0 0 #2563eb,
+      1em -0.5em 0 0 #2563eb,
+      1.5em -0.5em 0 0 #2563eb,
+      -2em 0 0 0 #2563eb,
+      -1.5em 0 0 0 #2563eb,
+      1.5em 0 0 0 #2563eb,
+      2em 0 0 0 #2563eb,
+      -2.5em 0.5em 0 0 #2563eb,
+      -2em 0.5em 0 0 #2563eb,
+      2em 0.5em 0 0 #2563eb,
+      2.5em 0.5em 0 0 #2563eb,
+      -2.5em 1em 0 0 #2563eb,
+      2.5em 1em 0 0 #2563eb,
+      -2.5em 1.5em 0 0 #2563eb,
+      -1.5em 1.5em 0 0 #2563eb,
+      1.5em 1.5em 0 0 #2563eb,
+      2.5em 1.5em 0 0 #2563eb,
+      -1em 2em 0 0 #2563eb,
+      -0.5em 2em 0 0 #2563eb,
+      0.5em 2em 0 0 #2563eb,
+      1em 2em 0 0 #2563eb;
     background: #2563eb;
-    width: 1em;
-    height: 1em;
+    width: 0.5em;
+    height: 0.5em;
     overflow: hidden;
-    margin: 50px 0 70px 65px;
+    margin: 25px 0 35px 32.5px;
   }
   
+  
   .space-invader:nth-child(even) {
-    box-shadow: 0 0 0 1em #9333ea,
-    0 1em 0 1em #9333ea,
-    -2.5em 1.5em 0 .5em #9333ea,
-    2.5em 1.5em 0 .5em #9333ea,
-    -3em -3em 0 0 #9333ea,
-    3em -3em 0 0 #9333ea,
-    -2em -2em 0 0 #9333ea,
-    2em -2em 0 0 #9333ea,
-    -3em -1em 0 0 #9333ea,
-    -2em -1em 0 0 #9333ea,
-    2em -1em 0 0 #9333ea,
-    3em -1em 0 0 #9333ea,
-    -4em 0 0 0 #9333ea,
-    -3em 0 0 0 #9333ea,
-    3em 0 0 0 #9333ea,
-    4em 0 0 0 #9333ea,
-    -5em 1em 0 0 #9333ea,
-    -4em 1em 0 0 #9333ea,
-    4em 1em 0 0 #9333ea,
-    5em 1em 0 0 #9333ea,
-    -5em 2em 0 0 #9333ea,
-    5em 2em 0 0 #9333ea,
-    -5em 3em 0 0 #9333ea,
-    -3em 3em 0 0 #9333ea,
-    3em 3em 0 0 #9333ea,
-    5em 3em 0 0 #9333ea,
-    -2em 4em 0 0 #9333ea,
-    -1em 4em 0 0 #9333ea,
-    1em 4em 0 0 #9333ea,
-    2em 4em 0 0 #9333ea;
+    box-shadow:
+      0 0 0 0.5em #9333ea,
+      0 0.5em 0 0.5em #9333ea,
+      -1.25em 0.75em 0 0.25em #9333ea,
+      1.25em 0.75em 0 0.25em #9333ea,
+      -1.5em -1.5em 0 0 #9333ea,
+      1.5em -1.5em 0 0 #9333ea,
+      -1em -1em 0 0 #9333ea,
+      1em -1em 0 0 #9333ea,
+      -1.5em -0.5em 0 0 #9333ea,
+      -1em -0.5em 0 0 #9333ea,
+      1em -0.5em 0 0 #9333ea,
+      1.5em -0.5em 0 0 #9333ea,
+      -2em 0 0 0 #9333ea,
+      -1.5em 0 0 0 #9333ea,
+      1.5em 0 0 0 #9333ea,
+      2em 0 0 0 #9333ea,
+      -2.5em 0.5em 0 0 #9333ea,
+      -2em 0.5em 0 0 #9333ea,
+      2em 0.5em 0 0 #9333ea,
+      2.5em 0.5em 0 0 #9333ea,
+      -2.5em 1em 0 0 #9333ea,
+      2.5em 1em 0 0 #9333ea,
+      -2.5em 1.5em 0 0 #9333ea,
+      -1.5em 1.5em 0 0 #9333ea,
+      1.5em 1.5em 0 0 #9333ea,
+      2.5em 1.5em 0 0 #9333ea,
+      -1em 2em 0 0 #9333ea,
+      -0.5em 2em 0 0 #9333ea,
+      0.5em 2em 0 0 #9333ea,
+      1em 2em 0 0 #9333ea;
     background: #9333ea;
-    width: 1em;
-    height: 1em;
+    width: 0.5em;
+    height: 0.5em;
     overflow: hidden;
-    margin: 50px 0 70px 65px;
+    margin: 25px 0 35px 32.5px;
+  }
+} 
+
+@media (max-width: 768px) {
+  .space-invader:nth-child(odd) {
+    box-shadow:
+      0 0 0 0.25em #2563eb,
+      0 0.25em 0 0.25em #2563eb,
+      -0.625em 0.375em 0 0.125em #2563eb,
+      0.625em 0.375em 0 0.125em #2563eb,
+      -0.75em -0.75em 0 0 #2563eb,
+      0.75em -0.75em 0 0 #2563eb,
+      -0.5em -0.5em 0 0 #2563eb,
+      0.5em -0.5em 0 0 #2563eb,
+      -0.75em -0.25em 0 0 #2563eb,
+      -0.5em -0.25em 0 0 #2563eb,
+      0.5em -0.25em 0 0 #2563eb,
+      0.75em -0.25em 0 0 #2563eb,
+      -1em 0 0 0 #2563eb,
+      -0.75em 0 0 0 #2563eb,
+      0.75em 0 0 0 #2563eb,
+      1em 0 0 0 #2563eb,
+      -1.25em 0.25em 0 0 #2563eb,
+      -1em 0.25em 0 0 #2563eb,
+      1em 0.25em 0 0 #2563eb,
+      1.25em 0.25em 0 0 #2563eb,
+      -1.25em 0.5em 0 0 #2563eb,
+      1.25em 0.5em 0 0 #2563eb,
+      -1.25em 0.75em 0 0 #2563eb,
+      -0.75em 0.75em 0 0 #2563eb,
+      0.75em 0.75em 0 0 #2563eb,
+      1.25em 0.75em 0 0 #2563eb,
+      -0.5em 1em 0 0 #2563eb,
+      -0.25em 1em 0 0 #2563eb,
+      0.25em 1em 0 0 #2563eb,
+      0.5em 1em 0 0 #2563eb;
+    background: #2563eb;
+    width: 0.25em;
+    height: 0.25em;
+    overflow: hidden;
+    margin: 12.5px 0 17.5px 16.25px;
+  }
+  .space-invader:nth-child(even) {
+    box-shadow:
+      0 0 0 0.25em #9333ea,
+      0 0.25em 0 0.25em #9333ea,
+      -0.625em 0.375em 0 0.125em #9333ea,
+      0.625em 0.375em 0 0.125em #9333ea,
+      -0.75em -0.75em 0 0 #9333ea,
+      0.75em -0.75em 0 0 #9333ea,
+      -0.5em -0.5em 0 0 #9333ea,
+      0.5em -0.5em 0 0 #9333ea,
+      -0.75em -0.25em 0 0 #9333ea,
+      -0.5em -0.25em 0 0 #9333ea,
+      0.5em -0.25em 0 0 #9333ea,
+      0.75em -0.25em 0 0 #9333ea,
+      -1em 0 0 0 #9333ea,
+      -0.75em 0 0 0 #9333ea,
+      0.75em 0 0 0 #9333ea,
+      1em 0 0 0 #9333ea,
+      -1.25em 0.25em 0 0 #9333ea,
+      -1em 0.25em 0 0 #9333ea,
+      1em 0.25em 0 0 #9333ea,
+      1.25em 0.25em 0 0 #9333ea,
+      -1.25em 0.5em 0 0 #9333ea,
+      1.25em 0.5em 0 0 #9333ea,
+      -1.25em 0.75em 0 0 #9333ea,
+      -0.75em 0.75em 0 0 #9333ea,
+      0.75em 0.75em 0 0 #9333ea,
+      1.25em 0.75em 0 0 #9333ea,
+      -0.5em 1em 0 0 #9333ea,
+      -0.25em 1em 0 0 #9333ea,
+      0.25em 1em 0 0 #9333ea,
+      0.5em 1em 0 0 #9333ea;
+    background: #9333ea;
+    width: 0.25em;
+    height: 0.25em;
+    overflow: hidden;
+    margin: 12.5px 0 17.5px 16.25px;
   }
 }
+  
+

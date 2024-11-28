@@ -19,8 +19,6 @@ const generateRandomProperties = (index: number) => {
   const transformOrigin = `${originX} ${originY}`;
 
   // Randomize box-shadow blur radius between 1vmin and 2.5vmin
-  const shadowBlur = Math.random() * (2.5 - 1) + 1 + "vmin";
-  const direction = Math.random() < 0.5 ? "-" : "";
   const boxShadow = `10vmin 0 currentColor`;
 
   // Set color based on even or odd index
@@ -38,7 +36,7 @@ const generateRandomProperties = (index: number) => {
 };
 
 const Background = () => {
-  const numSpans = 25; // Adjust the number of spans as needed
+  const numSpans = 15; // Adjust the number of spans as needed
 
   // Use useMemo to generate spans only once
   const spans = useMemo(() => {
