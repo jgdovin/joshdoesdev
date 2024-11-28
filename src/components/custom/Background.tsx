@@ -21,10 +21,10 @@ const generateRandomProperties = (index: number) => {
   // Randomize box-shadow blur radius between 1vmin and 2.5vmin
   const shadowBlur = Math.random() * (2.5 - 1) + 1 + "vmin";
   const direction = Math.random() < 0.5 ? "-" : "";
-  const boxShadow = `${direction}10vmin 0 ${shadowBlur} currentColor`;
+  const boxShadow = `${direction}10vmin 0 currentColor`;
 
   // Set color based on even or odd index
-  const color = index % 2 === 0 ? "#FFACAC" : "#583C87";
+  const color = index % 2 === 0 ? "#2563eb" : "#9333ea";
 
   return {
     top,
@@ -38,7 +38,7 @@ const generateRandomProperties = (index: number) => {
 };
 
 const Background = () => {
-  const numSpans = 20; // Adjust the number of spans as needed
+  const numSpans = 50; // Adjust the number of spans as needed
 
   // Use useMemo to generate spans only once
   const spans = useMemo(() => {
