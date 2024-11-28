@@ -1,6 +1,6 @@
 // Background.jsx
 import React, { useMemo } from "react";
-import "./Background.css";
+import "./background.css";
 
 const generateRandomProperties = (index: number) => {
   // Randomize top and left positions
