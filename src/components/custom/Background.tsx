@@ -21,7 +21,7 @@ const generateRandomProperties = (index: number) => {
   // Randomize box-shadow blur radius between 1vmin and 2.5vmin
   const shadowBlur = Math.random() * (2.5 - 1) + 1 + "vmin";
   const direction = Math.random() < 0.5 ? "-" : "";
-  const boxShadow = `${direction}10vmin 0 currentColor`;
+  const boxShadow = `10vmin 0 currentColor`;
 
   // Set color based on even or odd index
   const color = index % 2 === 0 ? "#2563eb" : "#9333ea";
@@ -32,7 +32,7 @@ const generateRandomProperties = (index: number) => {
     animationDuration: duration,
     animationDelay: delay,
     transformOrigin,
-
+    boxShadow,
     color,
   };
 };
@@ -59,7 +59,6 @@ const Background = () => {
             animationDuration: spanProps.animationDuration,
             animationDelay: spanProps.animationDelay,
             transformOrigin: spanProps.transformOrigin,
-
             color: spanProps.color,
           }}
           className="space-invader"
