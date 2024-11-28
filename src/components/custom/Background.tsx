@@ -38,7 +38,7 @@ const generateRandomProperties = (index: number) => {
 };
 
 const Background = () => {
-  const numSpans = 50; // Adjust the number of spans as needed
+  const numSpans = 25; // Adjust the number of spans as needed
 
   // Use useMemo to generate spans only once
   const spans = useMemo(() => {
