@@ -3,7 +3,7 @@ import { Cpu } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+    <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg transition-all hover:from-purple-600 hover:to-blue-600">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           <Link

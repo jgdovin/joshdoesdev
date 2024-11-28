@@ -76,14 +76,6 @@
 }
 
 /* Custom styles */
-.bg-gradient-to-r {
-  @apply transition-all duration-300 ease-in-out;
-}
-
-.bg-gradient-to-r:hover {
-  @apply from-purple-600 to-blue-600;
-}
-
 .card {
   @apply transition-all duration-300 ease-in-out;
 }

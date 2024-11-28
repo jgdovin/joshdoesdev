@@ -19,7 +19,7 @@ const PostPreview = ({ post }: { post: Post }) => {
     <Link href={`/posts/${slug}`}>
       <Card
         key={slug}
-        className="transition-shadow hover:cursor-pointer hover:shadow-lg"
+        className="glass transition-shadow hover:cursor-pointer hover:shadow-lg"
       >
         <CardHeader>
           <CardTitle className={`${ibmPlexBold.className} text-purple-400`}>
