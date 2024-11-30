@@ -8,23 +8,16 @@ export default function Footer() {
           <p>&copy; 2024 Josh Gdovin. All rights reserved.</p>
           <div className="flex space-x-4">
             <a
-              href="https://github.com"
+              href="https://github.com/jgdovin"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-blue-400"
             >
               <FolderGit size={24} />
             </a>
+
             <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-blue-400"
-            >
-              <X size={24} />
-            </a>
-            <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/joshgdovin/"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-blue-400"
