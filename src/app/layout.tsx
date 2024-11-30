@@ -27,7 +27,7 @@ export default function RootLayout({
           <Background />
           <Analytics />
           <Header />
-          <main className="container mx-auto flex-grow px-4 py-8">
+          <main className="container mx-auto flex-grow px-4 pt-[120px]">
             {children}
           </main>
           <Footer />
