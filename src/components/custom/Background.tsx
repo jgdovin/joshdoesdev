@@ -22,7 +22,7 @@ const generateRandomProperties = (index: number) => {
   const boxShadow = `10vmin 0 currentColor`;
 
   // Set color based on even or odd index
-  const color = index % 2 === 0 ? "#2563eb" : "#9333ea";
+  const color = index % 2 === 0 ? "#ffffff" : "#9333ea";
 
   return {
     top,
@@ -36,7 +36,7 @@ const generateRandomProperties = (index: number) => {
 };
 
 const Background = () => {
-  const numSpans = 15; // Adjust the number of spans as needed
+  const numSpans = 105; // Adjust the number of spans as needed
 
   // Use useMemo to generate spans only once
   const spans = useMemo(() => {
@@ -48,15 +48,12 @@ const Background = () => {
 
   return (
     <div className="background">
-      {spans.map((spanProps) => (
+      {spans.map((spanProps, index) => (
         <span
           key={spanProps.key}
           style={{
-            top: spanProps.top,
-            left: spanProps.left,
-            animationDuration: spanProps.animationDuration,
-            animationDelay: spanProps.animationDelay,
-            transformOrigin: spanProps.transformOrigin,
+            top: (index % 12) * 100,
+            left: (index % 21) * 180,
             color: spanProps.color,
           }}
           className="space-invader"
