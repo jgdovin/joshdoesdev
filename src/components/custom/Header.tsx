@@ -32,7 +32,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="flex items-center space-x-2 text-2xl font-bold"
+            className="flex items-center space-x-2 text-xl font-bold md:text-2xl"
           >
             <Cpu size={16} />
             <span>Josh Does Dev</span>
