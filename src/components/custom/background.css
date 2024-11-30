@@ -49,6 +49,10 @@
   /* Hide the corners of the header */
   overflow: hidden;
 }
+.glass:hover {
+  box-shadow: none;
+  backdrop-filter: blur(4px);
+}
 
 @media (min-width: 768px) {
   .space-invader:nth-child(odd) {
