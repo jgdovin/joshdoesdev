@@ -46,7 +46,8 @@ export default function Header() {
                       setIsOpen(false);
                       router.push(item.href);
                     }}
-                    className="transition-colors hover:text-blue-200"
+                    variant="link"
+                    className="hover:text-blue-200"
                   >
                     {item.label}
                   </Button>
