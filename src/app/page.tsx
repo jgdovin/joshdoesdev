@@ -2,6 +2,7 @@ import { getAllPublishedPosts } from "@/lib/posts";
 import PostList from "@/components/post-list";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import Categories from "@/components/custom/Categories";
 
 export default function Home() {
   const posts = getAllPublishedPosts();
@@ -12,55 +13,7 @@ export default function Home() {
         <PostList posts={posts} />
       </div>
       <div className="space-y-8">
-        <Card>
-          <CardHeader>
-            <CardTitle>Categories</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/category/cicd"
-                  className="text-purple-400 hover:underline"
-                >
-                  CI/CD
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/containerization"
-                  className="text-purple-400 hover:underline"
-                >
-                  Containerization
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/iac"
-                  className="text-purple-400 hover:underline"
-                >
-                  Infrastructure as Code
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/monitoring"
-                  className="text-purple-400 hover:underline"
-                >
-                  Monitoring
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/security"
-                  className="text-purple-400 hover:underline"
-                >
-                  Security
-                </Link>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
+        <Categories posts={posts} />
         <Card>
           <CardHeader>
             <CardTitle>About Me</CardTitle>
