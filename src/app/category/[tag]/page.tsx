@@ -21,7 +21,7 @@ export default function Home({ params }: Params) {
         <PostList posts={posts} />
       </div>
       <div className="space-y-8">
-        <Categories posts={posts} />
+        <Categories />
         <AboutMe />
       </div>
     </div>

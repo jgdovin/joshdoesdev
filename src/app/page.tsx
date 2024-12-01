@@ -13,7 +13,7 @@ export default function Home() {
         <PostList posts={posts} />
       </div>
       <div className="space-y-8">
-        <Categories posts={posts} />
+        <Categories />
         <AboutMe />
       </div>
     </div>
