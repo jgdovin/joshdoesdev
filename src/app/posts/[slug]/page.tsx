@@ -6,9 +6,7 @@ import markdownToHtml from "@/lib/markdownToHtml";
 // import Alert from "@/app/_components/alert";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User } from "lucide-react";
-import Button from "@/components/ui/Button";
 import { Separator } from "@/components/ui/separator";
-import markdownStyles from "@/components/markdown-styles.module.css";
 import { PostBody } from "@/components/post-body";
 
 export default async function Post({ params }: Params) {

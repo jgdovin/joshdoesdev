@@ -2,8 +2,10 @@ import { Post } from "@/interfaces/post";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { capitalizeFirstLetter, rankAndOrderCategories } from "@/lib/utils";
+import { getAllPublishedPosts } from "@/lib/posts";
+const posts = getAllPublishedPosts();
 
-export default async function Categories({ posts }: { posts: Post[] }) {
+export default async function Categories() {
   const categories = posts.flatMap((post) => post.tags.split(","));
   const rankedCategories = rankAndOrderCategories(categories, 5);
   return (

@@ -18,11 +18,16 @@ export function getPostBySlug(slug: string) {
   return { ...data, slug: realSlug, content } as Post;
 }
 
-export function getAllPublishedPosts(): Post[] {
+export function getAllPublishedPosts(tag?: string): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
     .filter((post) => post.published)
+    .filter((post) => {
+      if (!tag) return true;
+
+      return post.tags.includes(tag);
+    })
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
