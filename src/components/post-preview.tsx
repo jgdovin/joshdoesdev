@@ -14,7 +14,7 @@ import { capitalizeFirstLetter } from "@/lib/utils";
 
 const PostPreview = ({ post }: { post: Post }) => {
   const { title, date, excerpt, slug, tags } = post;
-  const mainTag = capitalizeFirstLetter(tags.split(",")[0]);
+
   return (
     <Link href={`/posts/${slug}`}>
       <Card
@@ -30,7 +30,16 @@ const PostPreview = ({ post }: { post: Post }) => {
           <p>{excerpt}</p>
         </CardContent>
         <CardFooter className="flex items-center justify-between">
-          <Badge variant="secondary">{mainTag}</Badge>
+          <div className="flex gap-2">
+            {tags.split(",").map((tag) => {
+              const formattedTag = capitalizeFirstLetter(tag.trim());
+              return (
+                <Badge key={tag} variant="secondary" className="mr-1">
+                  {formattedTag}
+                </Badge>
+              );
+            })}
+          </div>
           <span className="text-sm text-slate-400">{date}</span>
         </CardFooter>
       </Card>

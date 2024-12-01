@@ -2,7 +2,7 @@
 title: "Getting your ship together"
 date: "2024-04-09"
 excerpt: "Getting started with Docker is really easy. Today, I'd like to explore creating a simple Node.js \"Hello World\" application, building the application within a Dockerfile, and running the application in a Docker container. This guide is designed for those new to Docker, providing a hands-on approach to understanding how Docker can be used to containerize and run a Node.js application. Let’s dive in!"
-tags: "docker,container,devops"
+tags: "docker,containers,devops"
 published: true
 ---
 
