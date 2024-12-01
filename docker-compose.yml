@@ -1,27 +1,11 @@
 services:
-  joshdoesdev:
-    container_name: joshdoesdev
+  devcontainer:
+    # image: mcr.microsoft.com/devcontainers/typescript-node:1-22
     build:
       context: .
       dockerfile: Dockerfile
-    develop:
-      watch:
-        - action: sync
-          path: .
-          target: /app
-          ignore:
-            - .git
-        - action: rebuild
-          path: package.json
     volumes:
-      - ./:/app
+      - .:/workspace:cached
+    command: sleep infinity
     ports:
       - 3000:3000
-    networks:
-      - app-net
-
-volumes:
-  db-data:
-networks:
-  app-net:
-    driver: bridge
