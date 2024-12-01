@@ -1,7 +1,7 @@
 import { getAllPublishedPosts } from "@/lib/posts";
 import PostList from "@/components/post-list";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import Categories from "@/components/custom/Categories";
+import Tags from "@/components/custom/Tags";
 import AboutMe from "@/components/custom/AboutMe";
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
         <PostList posts={posts} />
       </div>
       <div className="space-y-8">
-        <Categories />
+        <Tags />
         <AboutMe />
       </div>
     </div>

@@ -1,28 +1,27 @@
-import { Post } from "@/interfaces/post";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { capitalizeFirstLetter, rankAndOrderCategories } from "@/lib/utils";
+import { capitalizeFirstLetter, rankAndOrderTags } from "@/lib/utils";
 import { getAllPublishedPosts } from "@/lib/posts";
 const posts = getAllPublishedPosts();
 
-export default async function Categories() {
-  const categories = posts.flatMap((post) => post.tags.split(","));
-  const rankedCategories = rankAndOrderCategories(categories, 5);
+export default async function Tags() {
+  const tags = posts.flatMap((post) => post.tags.split(","));
+  const rankedTags = rankAndOrderTags(tags, 5);
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Categories</CardTitle>
+        <CardTitle>Tags</CardTitle>
       </CardHeader>
       <CardContent>
         <ul className="space-y-2">
-          {rankedCategories.map((category) => {
+          {rankedTags.map((tag) => {
             return (
-              <li key={category}>
+              <li key={tag}>
                 <Link
-                  href={`/category/${category}`}
+                  href={`/tag/${tag}`}
                   className="text-purple-400 hover:underline"
                 >
-                  {capitalizeFirstLetter(category)}
+                  {capitalizeFirstLetter(tag)}
                 </Link>
               </li>
             );
