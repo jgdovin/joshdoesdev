@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, User } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { PostBody } from "@/components/post-body";
+import Link from "next/link";
 
 export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug);
@@ -32,9 +33,11 @@ export default async function Post({ params }: Params) {
             </div>
             <div>
               {post.tags.split(",").map((tag) => (
-                <Badge key={tag} variant="secondary" className="mr-2">
-                  {tag}
-                </Badge>
+                <Link key={tag} href={`/tag/${tag.trim()}`}>
+                  <Badge key={tag} variant="secondary" className="mr-2">
+                    {tag}
+                  </Badge>
+                </Link>
               ))}
             </div>
           </div>
