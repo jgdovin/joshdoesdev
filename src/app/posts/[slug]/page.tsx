@@ -22,17 +22,21 @@ export default async function Post({ params }: Params) {
     <main className="mx-auto max-w-4xl">
       <article className="overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800">
         <div className="p-8">
-          {post.tags.split(",").map((tag) => (
-            <Badge key={tag} variant="secondary" className="mr-2">
-              {tag}
-            </Badge>
-          ))}
           <h1 className="mb-4 text-4xl font-bold">{post.title}</h1>
-          <div className="mb-6 flex items-center text-gray-500 dark:text-gray-400">
-            <User size={18} className="mr-2" />
-            <span className="mr-4">Josh Gdovin</span>
-            <Calendar size={18} className="mr-2" />
-            <span className="mr-4">{post.date}</span>
+          <div className="mb-6 flex flex-col text-gray-500 dark:text-gray-400">
+            <div className="flex">
+              <User size={18} className="mr-2" />
+              <span className="mr-4">Josh Gdovin</span>
+              <Calendar size={18} className="mr-2" />
+              <span className="mr-4">{post.date}</span>
+            </div>
+            <div>
+              {post.tags.split(",").map((tag) => (
+                <Badge key={tag} variant="secondary" className="mr-2">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
           </div>
           <Separator className="my-6" />
           <PostBody content={content} />
