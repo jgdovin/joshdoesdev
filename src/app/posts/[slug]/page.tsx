@@ -24,7 +24,7 @@ export default async function Post({ params }: Params) {
       <article className="overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800">
         <div className="p-8">
           <h1 className="mb-4 text-4xl font-bold">{post.title}</h1>
-          <div className="mb-6 flex flex-col text-gray-500 dark:text-gray-400">
+          <div className="mb-6 flex flex-col gap-3 text-gray-500 dark:text-gray-400">
             <div className="flex">
               <User size={18} className="mr-2" />
               <span className="mr-4">Josh Gdovin</span>
