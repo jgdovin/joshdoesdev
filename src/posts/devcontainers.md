@@ -6,8 +6,6 @@ tags: "dev,node,containers"
 published: true
 ---
 
-# Debugging Node.js Applications with VS Code and Dev Containers
-
 ## Introduction
 
 Are you tired of the classic "it works on my machine" problem? Do you want a consistent development environment that makes debugging Node.js applications a breeze? Look no further! In this tutorial, we'll walk through setting up a Node.js project using Express, configuring it to run inside a Docker container with Visual Studio Code's Dev Containers, and leveraging the built-in debugger to replace those pesky `console.log` statements with proper breakpoints.
