@@ -6,7 +6,7 @@ const posts = getAllPublishedPosts();
 
 export default async function Tags() {
   const tags = posts.flatMap((post) => post.tags.split(","));
-  const rankedTags = rankAndOrderTags(tags, 5);
+  const rankedTags = rankAndOrderTags(tags, 10);
   return (
     <Card>
       <CardHeader>
