@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { usePathname, useRouter } from "next/navigation";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 export default function Header() {
