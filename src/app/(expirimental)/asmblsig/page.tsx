@@ -190,7 +190,7 @@ export default function TemplateGenerator() {
           id="template"
           value={template}
           readOnly
-          rows={50}
+          rows={10}
           className="font-mono text-sm"
         />
         <Button onClick={copyToClipboard}>Copy Template</Button>
