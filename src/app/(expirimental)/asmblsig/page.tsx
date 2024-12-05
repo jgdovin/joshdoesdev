@@ -21,13 +21,13 @@ export default function TemplateGenerator() {
   const previewRef = useRef(null);
 
   useEffect(() => {
-    const phoneDiplayed = `                <p><a
+    const phoneDiplayed = `<a
                   href="tel:${phone || "[phone]"}"
                   color="#010042"
                   class="contact-info__ExternalLink-sc-mmkjr6-2 ibLXSU"
                   style="text-decoration: none; color: #010042; font-size: 14px"
                   ><span>${phone || "[phone]"}</span></a
-                ></p>`;
+                >`;
     const phoneDisplay = includePhone ? phoneDiplayed : "";
     const updatedTemplate = `
 <table
