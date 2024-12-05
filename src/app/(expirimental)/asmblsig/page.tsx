@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const BUTTON_DEFAULT = "Copy Gmail";
 const HTML_BUTTON_DEFAULT = "Copy HTML";
@@ -16,9 +17,18 @@ export default function TemplateGenerator() {
   const [template, setTemplate] = useState("");
   const [buttonText, setButtonText] = useState(BUTTON_DEFAULT);
   const [htmlButtonText, setHtmlButtonText] = useState(HTML_BUTTON_DEFAULT);
+  const [includePhone, setIncludePhone] = useState(true);
   const previewRef = useRef(null);
 
   useEffect(() => {
+    const phoneDiplayed = `                <p><a
+                  href="tel:${phone || "[phone]"}"
+                  color="#010042"
+                  class="contact-info__ExternalLink-sc-mmkjr6-2 ibLXSU"
+                  style="text-decoration: none; color: #010042; font-size: 14px"
+                  ><span>${phone || "[phone]"}</span></a
+                ></p>`;
+    const phoneDisplay = includePhone ? phoneDiplayed : "";
     const updatedTemplate = `
 <table
   cellpadding="0"
@@ -71,26 +81,20 @@ export default function TemplateGenerator() {
                   <span>${name || "[name]"}</span>
                 </h2>
                 <p
-                  color="#F84928"
-                  font-size="medium"
-                  class="job-title__Container-sc-1hmtp73-0 ifJNJc"
-                  style="
-                    margin: 0px;
-                    color: #F84928;
-                    font-size: 14px;
-                    font-weight: 600;
-                    line-height: 22px;
-                  "
+                color="#F84928"
+                font-size="medium"
+                class="job-title__Container-sc-1hmtp73-0 ifJNJc"
+                style="
+                margin: 0px;
+                color: #F84928;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 22px;
+                "
                 >
-                  <span>${title || "[title]"}</span>
+                <span>${title || "[title]"}</span>
                 </p>
-                <a
-                  href="tel:+1-425-208-2997"
-                  color="#010042"
-                  class="contact-info__ExternalLink-sc-mmkjr6-2 ibLXSU"
-                  style="text-decoration: none; color: #010042; font-size: 14px"
-                  ><span>${phone || "[phone]"}</span></a
-                >
+                ${phoneDisplay}
                 <p
                   color="#010042"
                   font-size="medium"
@@ -137,7 +141,7 @@ export default function TemplateGenerator() {
 </table>
     `.trim();
     setTemplate(updatedTemplate);
-  }, [name, title, phone]);
+  }, [name, title, phone, includePhone]);
 
   const copyToClipboard = () => {
     if (previewRef.current) {
@@ -203,8 +207,15 @@ export default function TemplateGenerator() {
               placeholder="Enter your title"
             />
           </div>
-          <div>
-            <Label htmlFor="phone">Phone Number</Label>
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-2">
+              <Label htmlFor="phone">Phone Number</Label>
+              <Checkbox
+                name="includePhone"
+                checked={includePhone}
+                onCheckedChange={() => setIncludePhone(!includePhone)}
+              />
+            </div>
             <Input
               id="phone"
               value={phone}
