@@ -1,16 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+
+const BUTTON_DEFAULT = "Copy Gmail";
+const HTML_BUTTON_DEFAULT = "Copy HTML";
 
 export default function TemplateGenerator() {
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
   const [phone, setPhone] = useState("");
   const [template, setTemplate] = useState("");
+  const [buttonText, setButtonText] = useState(BUTTON_DEFAULT);
+  const [htmlButtonText, setHtmlButtonText] = useState(HTML_BUTTON_DEFAULT);
+  const previewRef = useRef(null);
 
   useEffect(() => {
     const updatedTemplate = `
@@ -134,9 +140,40 @@ export default function TemplateGenerator() {
   }, [name, title, phone]);
 
   const copyToClipboard = () => {
+    if (previewRef.current) {
+      // @ts-ignore - this is shenanigans to fix the gmail issue
+      const renderedHTML = previewRef.current.outerHTML;
+
+      navigator.clipboard
+        .write([
+          new ClipboardItem({
+            "text/html": new Blob([renderedHTML], { type: "text/html" }),
+            "text/plain": new Blob([renderedHTML], { type: "text/plain" }),
+          }),
+        ])
+        .then(
+          () => {
+            setButtonText("Copied!");
+            setTimeout(() => {
+              setButtonText(BUTTON_DEFAULT);
+            }, 2000);
+          },
+          (err) => {
+            console.error("Could not copy rendered HTML: ", err);
+          },
+        );
+    } else {
+      alert("Preview element not found.");
+    }
+  };
+
+  const copyHtmlToClipboard = () => {
     navigator.clipboard.writeText(template).then(
       () => {
-        alert("Template copied to clipboard!");
+        setHtmlButtonText("Copied!");
+        setTimeout(() => {
+          setHtmlButtonText(HTML_BUTTON_DEFAULT);
+        }, 2000);
       },
       (err) => {
         console.error("Could not copy text: ", err);
@@ -179,12 +216,21 @@ export default function TemplateGenerator() {
         <div className="space-y-4">
           <Label>Live Preview</Label>
           <div
+            ref={previewRef}
             className="rounded-md border p-4"
             dangerouslySetInnerHTML={{ __html: template }}
           />
         </div>
       </div>
-      <div className="space-y-2">
+      <div className="flex flex-col gap-5 space-y-2">
+        <div className="flex gap-5">
+          <Button className="w-[150px]" onClick={copyToClipboard}>
+            {buttonText}
+          </Button>
+          <Button className="w-[150px]" onClick={copyHtmlToClipboard}>
+            {htmlButtonText}
+          </Button>
+        </div>
         <Label htmlFor="template">HTML Template</Label>
         <Textarea
           id="template"
@@ -193,7 +239,6 @@ export default function TemplateGenerator() {
           rows={10}
           className="font-mono text-sm"
         />
-        <Button onClick={copyToClipboard}>Copy Template</Button>
       </div>
     </div>
   );
