@@ -129,7 +129,7 @@ export default function TemplateGenerator() {
                     line-height: 22px;
                   "
                 >
-                  <span>We build to last.</span>
+                  <span>Driven by potential.</span>
                 </p>
               </td>
             </tr>
