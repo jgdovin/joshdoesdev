@@ -9,3 +9,9 @@ services:
     command: sleep infinity
     ports:
       - 3000:3000
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.devcontainer.rule=Host(`blog.local.justjosh.us`)
+        - traefik.http.services.devcontainer.loadbalancer.server.port=3000
+        - traefik.http.routers.devcontainer.entrypoints=web
