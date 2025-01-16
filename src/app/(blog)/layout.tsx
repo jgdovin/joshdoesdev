@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "../globals.css";
 import { ThemeProvider } from "next-themes";
 
-import { Analytics } from "@vercel/analytics/react";
 import Header from "@/components/custom/Header";
 import Footer from "@/components/custom/Footer";
 import { raleway } from "@/lib/fonts";
@@ -25,7 +24,7 @@ export default function RootLayout({
       >
         <div className="flex min-h-screen flex-col">
           <Background />
-          <Analytics />
+          
           <Header />
           <main className="container mx-auto flex-grow px-4 pt-[120px]">
             {children}
