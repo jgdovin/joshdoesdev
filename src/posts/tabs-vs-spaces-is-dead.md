@@ -21,11 +21,11 @@ Let’s rewind to the early days of programming, back when teams shared code thr
 
 Teams argued passionately, editors behaved inconsistently, and it wasn’t uncommon to see a project’s entire codebase rewritten just to normalize indentation.
 
-At some point, this simple formatting choice became a stand-in for bigger philosophical arguments: _flexibility vs control_, _accessibility vs uniformity_, _performance vs aesthetics_. You weren’t just choosing a character—you were picking a side in a holy war. 
+At some point, this simple formatting choice became a stand-in for bigger philosophical arguments: _flexibility vs control_, _accessibility vs uniformity_, _performance vs aesthetics_. You weren’t just choosing a character—you were picking a side in a war for the ages. 
 
 So, where did you fall? Were you a principled space purist, or a tab-for-efficiency evangelist? Or did you just copy whatever the team did and hope no one noticed?
 
-I personally had my own side in this war of sorts. Reflecting back, does it really matter?
+I personally had my own opinions of what was best. Reflecting back, I question, does it really matter?
 
 ## The Modern Landscape
 
